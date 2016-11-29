@@ -1,0 +1,18 @@
+Remove Docker Containers
+
+To remove a containers, Docker provides rm option. Using this we can delete any docker containers from our local system. For example use below command with changing <CONTAINER ID> with your Docker container id.
+
+# docker rm  <CONTAINER ID>
+To list all containers on your system using ps option, but ps will show only running containers. So to view all containers use -a parameter with ps.
+
+root@tecadmin:~# docker ps -a
+
+CONTAINER ID   IMAGE    COMMAND      CREATED       STATUS      PORTS  NAMES
+f2582758af13   ubuntu   "/bin/bash"  2 hours ago   Up 2 hours         first_ubuntu
+2b199b9976c4   centos   "/bin/bash"  3 days ago    Up 3 hours         thirsty_yalow
+Stop & Remove All Docker Containers
+
+If you want to remove all docker containers. You can use simply following commands. First command will stop all running docker containers and second command will delete them.
+
+# docker stop $(docker ps -a -q)
+# docker rm $(docker ps -a -q)
